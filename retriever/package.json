@@ -1,0 +1,22 @@
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "description": "sample service to read from DynamoDB tables",
+  "main": "app.js",
+  "scripts": {
+    "run": "node app.js",
+    "test": "nyc mocha tests/unit/"
+  },
+  "author": "3pg",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/util-dynamodb": "^3.9.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.867.0",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "nyc": "^15.1.0",
+    "sinon": "^9.0.1"
+  }
+}

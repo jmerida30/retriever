@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: >
+    retriever
+
+    Retrieves registries via get and list methods
+
+Resources:
+  GetFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      CodeUri: retriever/
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+
+  SampleApi:
+    Type: 'AWS::Serverless::Api'
+    Properties:
+      StageName: dev
+
+Outputs:
+  HelloWorldApi:
+    Description: 'URL for application'
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/prod/hello/'
